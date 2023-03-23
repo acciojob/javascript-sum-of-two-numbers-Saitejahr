@@ -1,11 +1,16 @@
-let input1 = prompt("Enter the first number:");
-let input2 = prompt("Enter the second number:");
+let num1 = prompt("Enter the first number:");
+let num2 = prompt("Enter the second number:");
 
-// Check that the input is numerical
-if (input1 === "" || input2 === "" || isNaN(input1) || isNaN(input2)) {
-  document.getElementById("sum").textContent="Invalid input. Please enter a valid number.";
-} else {
-  // Add the two input numbers
-  let sum = Number(input1) + Number(input2);
-  document.getElementById("sum").textContent = sum;
+// Check if both inputs are valid numbers
+if (!isNaN(num1) && !isNaN(num2)) {
+  let sum = parseFloat(num1) + parseFloat(num2);
+  alert(`The sum of ${num1} and ${num2} is ${sum}.`);
+} 
+// Check if only one input is a valid number
+else if (!isNaN(num1) || !isNaN(num2)) {
+  alert("Invalid input. Please enter two valid numbers.");
+} 
+// Both inputs are not valid numbers
+else {
+  alert("Invalid input. Please enter two valid numbers.");
 }
